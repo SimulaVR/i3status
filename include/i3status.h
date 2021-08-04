@@ -7,7 +7,8 @@ typedef enum {
     O_I3BAR,
     O_LEMONBAR,
     O_TERM,
-    O_NONE
+    O_NONE,
+    O_SIMULA
 } output_format_t;
 extern output_format_t output_format;
 

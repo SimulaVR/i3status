@@ -40,6 +40,8 @@ char *color(const char *colorstr) {
         int b = (col & (0xFF << 16)) / 0x800000;
         col = (r << 2) | (g << 1) | b;
         (void)snprintf(colorbuf, sizeof(colorbuf), "\033[3%d;1m", col);
+    } else if (output_format == O_SIMULA) {
+        (void)snprintf(colorbuf, sizeof(colorbuf), "[color=%s]", cfg_getstr(cfg_general, colorstr));
     }
     return colorbuf;
 }
@@ -51,6 +53,8 @@ char *color(const char *colorstr) {
 char *endcolor(void) {
     if (output_format == O_XMOBAR)
         return "</fc>";
+    else if (output_format == O_SIMULA)
+        return "[/color]";
     else if (output_format == O_TERM)
         return "\033[0m";
     else
@@ -70,6 +74,8 @@ void print_separator(const char *separator) {
     else if (output_format == O_TERM)
         printf("%s%s%s", color("color_separator"), separator, endcolor());
     else if (output_format == O_NONE)
+        printf("%s", separator);
+    else if (output_format == O_SIMULA)
         printf("%s", separator);
 }
 

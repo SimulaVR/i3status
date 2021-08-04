@@ -612,6 +612,8 @@ int main(int argc, char *argv[]) {
         output_format = O_LEMONBAR;
     else if (strcasecmp(output_str, "term") == 0)
         output_format = O_TERM;
+    else if (strcasecmp(output_str, "simula") == 0)
+        output_format = O_SIMULA;
     else if (strcasecmp(output_str, "none") == 0)
         output_format = O_NONE;
     else
