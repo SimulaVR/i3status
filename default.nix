@@ -49,7 +49,6 @@ stdenv.mkDerivation rec {
     homepage = "https://i3wm.org";
     maintainers = [ ];
     license = lib.licenses.bsd3;
-    platforms = lib.platforms.all;
+    platforms = lib.platforms.linux;
   };
-
 }
