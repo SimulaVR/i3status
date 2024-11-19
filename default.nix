@@ -11,7 +11,7 @@
   xmlto,
   docbook_xml_dtd_45,
   docbook_xsl,
-  alsaLib,
+  alsa-lib,
 }:
 
 stdenv.mkDerivation rec {
@@ -30,7 +30,7 @@ stdenv.mkDerivation rec {
     yajl
     libpulseaudio
     libnl
-    alsaLib
+    alsa-lib
   ];
 
   makeFlags = [
