@@ -15,7 +15,8 @@
 }:
 
 stdenv.mkDerivation rec {
-  name = "i3status-2.13";
+  pname = "i3status";
+  version = "2.13";
 
   src = ./.;
   nativeBuildInputs = [
